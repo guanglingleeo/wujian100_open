@@ -259,7 +259,8 @@ integer j;
 integer k;
   reg [31:0] one_word;
 `ifdef iverilog
-  reg [31:0]  temp_mem[16384];
+  // reg [31:0]  temp_mem[16384]; // ic7x24: fix iverilog -g2012
+  reg [31:0]  temp_mem[0:16384]; // ic7x24: fix iverilog -g2012
 `else
   reg [31:0]  temp_mem[integer];
 `endif
